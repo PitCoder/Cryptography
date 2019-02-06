@@ -80,4 +80,7 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+#Text cipher samples
+*.txt
+
 # End of https://www.gitignore.io/api/pycharm
