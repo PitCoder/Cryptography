@@ -33,6 +33,7 @@ s1 = 0, t1 = 1
 Because the gcd(a,1) is 1, therefore s0 = 1 and gdc(a,a) if a, therefore t1 = 1
 '''
 
+
 def eea(r0, r1):
     #Initialization  of coeficients
     s0 = 1; t0 = 0;
@@ -54,7 +55,8 @@ def eea(r0, r1):
 
     return r0, s0, t0
 
-if __name__ == '__main__':
+
+def eea_input():
     a, b = str(input("Inserte los valores (a,b): ").replace(" ","")).split(",")
     print("Valor de a: ", a)
     print("Valor de b:", b)
