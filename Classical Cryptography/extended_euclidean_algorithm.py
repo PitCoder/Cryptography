@@ -56,7 +56,7 @@ def eea(r0, r1):
     return r0, s0, t0
 
 
-def eea_input():
+if __name__ == '__main__':
     a, b = str(input("Inserte los valores (a,b): ").replace(" ","")).split(",")
     print("Valor de a: ", a)
     print("Valor de b:", b)
