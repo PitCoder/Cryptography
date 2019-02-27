@@ -100,19 +100,22 @@ def keyGeneration(file):
         return False
 
 def modularInverseMatrix(key):
-    #KEY MATRIX DETERMINANT GENERATION
-    determinant = int(round(np.linalg.det(key))) % ALPHABET_SIZE
-    if determinant < 0:
-        determinant = determinant + ALPHABET_SIZE
-    gcd, s, t = eea(ALPHABET_SIZE, determinant)
-    det_inverse = t
+    try:
+        #KEY MATRIX DETERMINANT GENERATION
+        determinant = int(round(np.linalg.det(key))) % ALPHABET_SIZE
+        if determinant < 0:
+            determinant = determinant + ALPHABET_SIZE
+        gcd, s, t = eea(ALPHABET_SIZE, determinant)
+        det_inverse = t
 
-    #TRANSPOSE KEY MATRIX GENERATION
-    adjoint = adjointMatrix(key)
+        #TRANSPOSE KEY MATRIX GENERATION
+        adjoint = adjointMatrix(key)
 
-    #MODULAR KEY INVERSE MATRIX GENERATION
-    D = (det_inverse * adjoint) % ALPHABET_SIZE
-    return D
+        #MODULAR KEY INVERSE MATRIX GENERATION
+        D = (det_inverse * adjoint) % ALPHABET_SIZE
+        return D
+    except:
+        return "It has no inverse"
 
 def matrixOperations(T, K):
     string = ""
@@ -132,10 +135,12 @@ def matrixOperations(T, K):
     #TRANSFORMATION TO STRING
     for value in np.nditer(EM):
         string = string + str(chr(value))
-    return string
+
+    print("Plaintext selected: ", T, "\nMatrix representation", M, "\nCiphertext generated: ", string, "\nMatrix Representation: ", EM)
+    return M, EM
 
 def chunks(filename):
-    with open("Texts/" + filename + ".txt", "r", encoding='utf8') as fp:
+    with open("Texts/" + filename, "r", encoding='utf8') as fp:
         chunk = fp.read(BLOCK_SIZE * 3)
         while chunk:
             yield chunk
@@ -145,7 +150,7 @@ def encryption(file, key):
     try:
         #We define the read/write files
         plaintext_file = chunks(file)
-        ciphertext_file = open("Texts/" + file + "_hill.txt", "w", encoding='utf8')
+        ciphertext_file = open("Texts/" + file + "_hill.py", "w", encoding='utf8')
 
         #Do encryption by chunks of data to avoid variable overflow
         for chunk in plaintext_file:
@@ -166,7 +171,7 @@ def decryption(file, key):
     try:
         #We define the read/write files
         ciphertext_file = chunks(file)
-        plaintext_file = open("Texts/" + file + "_dec.txt", "w", encoding='utf8')
+        plaintext_file = open("Texts/" + file + "_dec.py", "w", encoding='utf8')
         inverse_key = modularInverseMatrix(key)
 
         #Do decryption by chunks of data to avoid variable overflow
@@ -184,8 +189,8 @@ def decryption(file, key):
 if __name__ == '__main__':
     print("========== HILL CIPHER ==========")
     #FILES NAMES
-    M = "cicero_letter"
-    C = "cicero_letter_hill"
+    M = "affine_cipher"
+    C = "affine_cipher_hill"
     K = "key_hill"
 
     #KEY GENERATION

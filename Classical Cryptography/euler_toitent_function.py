@@ -28,7 +28,8 @@ def phi(n):
 
 #Driver code
 #1) Initialize : result = n
-for n in range(1, 11):
-    print("phi(", n, ") = ", phi(n))
+#for n in range(1, 11):
+n = 148
+print("phi(", n, ") = ", phi(n))
 
 

@@ -48,7 +48,7 @@ if __name__ == '__main__':
             operation_mode = int(input("\nSelect an operation mode (0:Encrypt, 1:Decrypt): "))
 
             if operation_mode == 0:
-                file_read = open("Texts/affine_cipher.py", "r", encoding = 'utf-8')
+                file_read = open("Texts/plaintext_file.txt", "r", encoding = 'utf-8')
                 file_write = open("Texts/ciphertext_file.txt", "w", encoding = 'utf-8')
 
                 for sentence in file_read:

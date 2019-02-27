@@ -62,7 +62,7 @@ def readKey(file):
         key_vals.append(list(map(int,vals[i:i+BLOCK_SIZE])))
     return np.array(key_vals)
 
-def generatePermutationMatrix():
+def generateDiagonalMatrix():
     M = []
     for i in range(BLOCK_SIZE):
         M.append([1 if j == i else 0 for j in range(BLOCK_SIZE)])
@@ -71,7 +71,7 @@ def generatePermutationMatrix():
 def keyGeneration(file):
     try:
         #DIAGONAL MATRIX GENERATION
-        diagonal_matrix = generatePermutationMatrix()
+        diagonal_matrix = generateDiagonalMatrix()
         #GENERATION OF MATRIX'S PERMUTATIONS
         P = list(it.permutations(diagonal_matrix))
         #SELECTION OF THE KEY PERMUTATION
@@ -150,26 +150,6 @@ def encryption(file, key):
         return True
     except:
         return False
-
-def decryption(file, key):
-    try:
-        #We define the read/write files
-        ciphertext_file = chunks(file)
-        plaintext_file = open("Texts/" + file + "_dperm.txt", "w", encoding='utf8')
-        inverse_key = modularInverseMatrix(key)
-
-        #Do decryption by chunks of data to avoid variable overflow
-        for chunk in ciphertext_file:
-            data = matrixOperations(chunk, inverse_key)
-            plaintext_file.write(data)
-
-        #Finally we close the given files
-        plaintext_file.close()
-        ciphertext_file.close()
-        return True
-    except:
-        return False
-
 
 def decryption(file, key):
     try:

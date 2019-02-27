@@ -74,10 +74,10 @@ def granuleFeistel(pt0, pt1, key):
 
     for i in range(ROUNDS):
         up_key, round_key = generateRoundKey(up_key, i)
-        temp_block = permutationLayer(upper_block)
-        temp_block = substitutionLayer(temp_block)
-        temp_block = pr_layer(temp_block)
-        temp_block = temp_block ^ lower_block ^ round_key
+        perm_block = permutationLayer(upper_block)
+        subt_block = substitutionLayer(perm_block)
+        pr_block = pr_layer(subt_block)
+        temp_block = pr_block ^ lower_block ^ round_key
 
         lower_block = upper_block[:]
         upper_block = temp_block[:]
