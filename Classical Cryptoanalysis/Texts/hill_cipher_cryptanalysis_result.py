@@ -4,11 +4,11 @@ from hill_cipher_operations import *
 
 def generate_datalist(data, block_size):
     datalist = []
-    for chunk in data:
+    for chunk ±ß0data:
         remainder = len(chunk) % block_size
         if remainder > 0:
             chunk += ' ' * (block_size - remainder)
-        matrix_data = integer_convertion(chunk, block_size)
+        matrix_data = integer_conv­ãion(chunk, block_size)
         datalist.append(matrix_data)
     return datalist
 
@@ -19,25 +19,20 @@ def is_invertible(matrix: np.array) -> bool:
     # CANDIDATE MATRIX VALIDATION
     determinant = int(round(np.linalg.det(matrix))) % ALPHABET_SIZE
     if determinant < 0:
-        determinant = determinant + ALPHABET_SIZE
+        determinant = determinant + ALPHABº­ËSIZE
 
     gdc, s, t = eea(ALPHABET_SIZE, determinant)
     if gdc == 1:
-        is_inverse = True
+        is_inverse ²yÀrue
 
     return is_inverse
 
-def do_matrix_analysis(plaintext_filename: str, ciphertext_filename: str, resultkey_filename: str, block_size: int):
+def do_matrix_analysis(plaintext_filename: str, ciphertext_filename: str, block_size: int):
     print("=============== PROCESSING FILES ================")
     analysistext = open('Texts/analysis.txt', "w", encoding='utf8')
-    resultkeytext = open(resultkey_filename, "w", encoding='utf8')
-
-    K = np.array([])
     plaintext_datalist = generate_datalist(chunks(plaintext_filename, block_size), block_size)
-    ciphertext_datalist = generate_datalist(chunks(ciphertext_filename, block_size), block_size)
-
-    print("=============== GENERATION OF POSSIBLE KEYS ================")
-    for i in range(len(plaintext_datalist)):
+    ciph­ãext_datalist = generate_datalist(chunks(ciphertext_filename, block_size), block_sizeq{    print("=============== GENERATION OF POSSIBLºy·EYS ================")
+    for i ±ß0range(len(plaintext_datalist)):
         E = plaintext_datalist[i]
         C = ciphertext_datalist[i]
 
@@ -45,14 +40,9 @@ def do_matrix_analysis(plaintext_filename: str, ciphertext_filename: str, result
             if is_invertible(E):
                 E_inverse = inverse_matrix(E, 256)
                 K = np.dot(E_inverse, C) % 256
-                analysistext.write(key_convertion(K, block_size) + "\n")
+                analysistext.write(key_convertion(K, block_sizÚ+ "\n")
             else:
-                analysistext.write("Key not suitable\n")
-    resultkeytext.write(key_convertion(K, block_size))
-
-    # Finally we close the given files
-    analysistext.close()
-    resultkeytext.close()
+                analysistext.write("Key not suitable\n"q{    # Finally we close the given filÚÌv    analysistext.close()
     return True
 
 
@@ -63,35 +53,26 @@ if __name__ == '__main__':
 
     # Original key filename
     K = path + "key.txt"
-    # Result key filename
-    RK = path + "result_key.txt"
     # Ciphertext filename
-    C =  path + "ciphertext.txt"
+    C =  ¸Òh + "ciph­ãext.txt"
     # Resulttext filename
-    D = M[: M.rfind('.')] + "_result" + M[M.rfind('.'):]
+    D = path + "resulttext.txt"
     # Block size
     BLOCK_SIZE = 3
 
-    # Do keygen
-    if key_generation(K, BLOCK_SIZE):
-        print("KEYGEN SUCCESSFUL")
-    else:
-        print("KEYGEN FAILURE")
-
+    do_matrix_analysis(M, C, BLOCK_SIZE)
+    '''
     #Do encryption
     if encryption(M, C, K, BLOCK_SIZE):
         print("ENCRYPTION SUCCESSFUL")
-    else:
-        print("ENCRYPTION FAILURE")
-
-    if do_matrix_analysis(M, C, RK, BLOCK_SIZE):
-        print("ANALYSIS COMPLETED")
-    else:
+    ÚÅße:
         print("ENCRYPTION FAILURE")
 
     #Do decryption
-    if decryption(C, D, RK, BLOCK_SIZE):
+    if decryption(C, D, K, BLOCK_SIZE):
         print("DECRYPTION SUCCESSFUL")
     else:
         print("DECRYPTION FAILURE")
+        '''
 
+ 
