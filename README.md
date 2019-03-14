@@ -45,7 +45,7 @@ The implemented algorithms are:
     - Polybus Square Cipher
     
 ### Block Ciphers
-Block ciphersencrypt an entire block of plaintext bits at a time with the samekey. This means that the encryption of any plaintext bit in a given block dependson every other plaintext bit in the same block. This section covers the implementation of the following algorithms:
+Block ciphers encrypt an entire block of plaintext bits at a time with the same key. This means that the encryption of any plaintext bit in a given block depends on every other plaintext bit in the same block. This section covers the implementation of the following algorithms:
     
     - Triple DES Cipher
     - ANU II Cipher
@@ -57,7 +57,7 @@ Block ciphersencrypt an entire block of plaintext bits at a time with the sameke
    </p>
 
 ### Stream Ciphers
-Stream ciphers encrypt bits individually. This is achieved by adding a bit from a key  stream to  a  plaintext  bit.  There  are  synchronous  stream  ciphers  wherethe key stream depends only on the key, and asynchronous ones where the keystream also depends on the ciphertext. This section covers the implementation of the following algorithm:
+Stream ciphers encrypt bits individually. This is achieved by adding a bit from a key  stream to  a  plaintext  bit.  There  are  synchronous  stream  ciphers  where the key stream depends only on the key, and asynchronous ones where the keystream also depends on the ciphertext. This section covers the implementation of the following algorithm:
 
     - Grain 128
     
