@@ -8,6 +8,10 @@
 - Block Ciphers
 - Stream Ciphers
 
+<p align="center">
+  <img src="https://thumbs.gfycat.com/ViciousEnchantedHairstreak-size_restricted.gif" alt="Crytography"/>
+</p>
+
 ### Introduction to Cryptography
 Cryptography is the science of secret writing with the goal of hiding the meaning of a message. Cryptography itself splits into three main branches:
 
