@@ -24,7 +24,22 @@ Symmetric key ciphers are valuable because:
     - The keys tend to be much smaller for the level of protection they afford.
     - The algorithms are relatively inexpensive to process.
 
-Therefore, implementing symmetric cryptography (particularly with hardware) can be highly effective because you do not experience any significant time delay as a result of the encryption and decryption. Symmetric cryptography also provides a degree of authentication because data encrypted with one symmetric key cannot be decrypted with any other symmetric key. 
+Therefore, implementing symmetric cryptography (particularly with hardware) can be highly effective because you do not experience any significant time delay as a result of the encryption and decryption. Symmetric cryptography also provides a degree of authentication because data encrypted with one symmetric key cannot be decrypted with any other symmetric key.
+
+### Classical Ciphers
+
+Even though this repository is still under construction, the section about classical ciphers is almost complete. It covers an introduction to Monoalphabetic Sustitution Ciphers, Simple Transposition Ciphers, Polyalphabetic Sustitution Ciphers and Fractioning Ciphers.
+
+The implemented algorithms are:
+
+    - Caesar Shift Cipher
+    - Affine Cipher
+    - Mixed Alphabet Cipher
+    - Permutation Cipher
+    - Simple Columnar Transposition Cipher
+    - Hill Cipher
+    - Polybous Square Cipher
+    
 
 ### License
 
