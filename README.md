@@ -42,7 +42,7 @@ The implemented algorithms are:
     - Permutation Cipher
     - Simple Columnar Transposition Cipher
     - Hill Cipher
-    - Polybous Square Cipher
+    - Polybus Square Cipher
     
 ### Block Ciphers
 Block ciphersencrypt an entire block of plaintext bits at a time with the samekey. This means that the encryption of any plaintext bit in a given block dependson every other plaintext bit in the same block. This section covers the implementation of the following algorithms:
@@ -63,7 +63,7 @@ Stream ciphers encrypt bits individually. This is achieved by adding a bit from 
     
    
    <p align="center">
-      <img src="https://raw.githubusercontent.com/PitCoder/Cryptography/master/Img/ciphre.gif" alt="Stream CIpher"/>
+      <img src="https://raw.githubusercontent.com/PitCoder/Cryptography/master/Img/cipher.gif" alt="Stream Cipher"/>
    </p>
     
 
