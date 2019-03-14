@@ -19,7 +19,7 @@ Cryptography is the science of secret writing with the goal of hiding the meanin
 - **Asymetric (or Public Key) Algorithms:** user possesses a secret key as in symmetric cryptog-raphy but also a public key.
 - **Cryptographic Protocols:** roughly speaking, crypto protocols deal with the application  of  cryptographic  algorithms.
 
-In this repository only simetric algorithms have been implemented so far, in the future more algorithms will be added.
+In this repository only symmetric algorithms have been implemented so far, in the future more algorithms will be added.
 
 #### Symmetric Algorithms
 Symmetric key ciphers are valuable because:
@@ -43,6 +43,28 @@ The implemented algorithms are:
     - Simple Columnar Transposition Cipher
     - Hill Cipher
     - Polybous Square Cipher
+    
+### Block Ciphers
+Block ciphersencrypt an entire block of plaintext bits at a time with the samekey. This means that the encryption of any plaintext bit in a given block dependson every other plaintext bit in the same block. This section covers the implementation of the following algorithms:
+    
+    - Triple DES Cipher
+    - ANU II Cipher
+    - Baby AES (Advanced Encryption Standard)
+    - Granule
+   
+   <p align="center">
+      <img src="https://raw.githubusercontent.com/PitCoder/Cryptography/master/Img/aes.gif" alt="AES"/>
+   </p>
+
+### Stream Ciphers
+Stream ciphers encrypt bits individually. This is achieved by adding a bit from a key  stream to  a  plaintext  bit.  There  are  synchronous  stream  ciphers  wherethe key stream depends only on the key, and asynchronous ones where the keystream also depends on the ciphertext. This section covers the implementation of the following algorithm:
+
+    - Grain 128
+    
+   
+   <p align="center">
+      <img src="https://raw.githubusercontent.com/PitCoder/Cryptography/master/Img/ciphre.gif" alt="Stream CIpher"/>
+   </p>
     
 
 ### License
