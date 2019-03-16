@@ -69,7 +69,7 @@ Stream ciphers encrypt bits individually. This is achieved by adding a bit from 
 
 ### License
 
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://github.com/PitCoder/Cryptography/blob/master/LICENSE)
 
 - **[MIT license](https://github.com/PitCoder/Cryptography/blob/master/LICENSE)**
 - Copyright 2019 © <a href="https://github.com/PitCoder" target="_blank">Eric Alejandro López Ayala</a>.
