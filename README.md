@@ -27,13 +27,13 @@ In this repository only symmetric algorithms have been implemented so far, in th
 </p>
 
 #### Symmetric Algorithms
-<p align="justify">
 Symmetric key ciphers are valuable because:
 
     - It is relatively inexpensive to produce a strong key for these ciphers.
     - The keys tend to be much smaller for the level of protection they afford.
     - The algorithms are relatively inexpensive to process.
 
+<p align="justify">
 Therefore, implementing symmetric cryptography (particularly with hardware) can be highly effective because you do not experience any significant time delay as a result of the encryption and decryption. Symmetric cryptography also provides a degree of authentication because data encrypted with one symmetric key cannot be decrypted with any other symmetric key.
 </p>
 
